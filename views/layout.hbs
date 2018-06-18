@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+	<link rel="stylesheet" href="/css/style.css" media="only screen and (-webkit-min-device-pixel-ratio:0) and (min-color-index:0), (-ms-high-contrast: none), only all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm)">
+  </head>
+  <body>
+    {{{body}}}
+	<script>
+		(function() {
+    var linkEl = document.querySelector('link');
+    if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+        var modulescript = document.createElement('script');
+        modulescript.src = '../public/javascript/bundle-es6.js';
+        modulescript.async = true;
+		modulescript.type = "module"
+        document.body.appendChild(modulescript);
+
+		var nomodulescript = document.createElement('script');
+        nomodulescript.src = '../public/javascript/bundle-es5.js';
+        nomodulescript.async = true;
+		nomodulescript.type = "nomodule"
+        document.body.appendChild(nomodulescript);
+    }
+})();
+	</script>
+  </body>
+</html>
