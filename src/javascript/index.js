@@ -1,5 +1,10 @@
 import {treeshaketest, otherthing} from './thingy.js';
 import init from './expandable.js';
+
+import {MDCRipple} from '@material/ripple';
+
+const fabRipple = new MDCRipple(document.querySelector('.mdc-fab'));
+
 // import {isEqual} from 'lodash-es';
 
 // var boo = isEqual(2, 3);
@@ -28,3 +33,4 @@ console.log('opened!!');
 box.addEventListener('close', function() {
 	console.log('closed!!');
 })
+
