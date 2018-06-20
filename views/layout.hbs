@@ -6,16 +6,13 @@
   </head>
   <body>
     {{{body}}}
+		<script type="module">
+		import './javascript/bundle-es6.js';
+	</script>
 	<script>
 		(function() {
     var linkEl = document.querySelector('link');
     if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
-        var modulescript = document.createElement('script');
-        modulescript.src = './javascript/bundle-es6.js';
-        modulescript.async = true;
-		modulescript.type = "module"
-        document.body.appendChild(modulescript);
-
 		var nomodulescript = document.createElement('script');
         nomodulescript.src = './javascript/bundle-es5.js';
         nomodulescript.async = true;
