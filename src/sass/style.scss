@@ -148,3 +148,11 @@ footer {
 .margin-0 {
 	margin: 0;
 }
+
+body {
+	height: min-content;
+}
+
+[data-expandable-box] {
+	overflow: hidden;
+}

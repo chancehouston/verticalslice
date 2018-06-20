@@ -11,13 +11,13 @@
     var linkEl = document.querySelector('link');
     if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
         var modulescript = document.createElement('script');
-        modulescript.src = '../public/javascript/bundle-es6.js';
+        modulescript.src = './javascript/bundle-es6.js';
         modulescript.async = true;
 		modulescript.type = "module"
         document.body.appendChild(modulescript);
 
 		var nomodulescript = document.createElement('script');
-        nomodulescript.src = '../public/javascript/bundle-es5.js';
+        nomodulescript.src = './javascript/bundle-es5.js';
         nomodulescript.async = true;
 		nomodulescript.type = "nomodule"
         document.body.appendChild(nomodulescript);

@@ -1,7 +1,3 @@
-function otherthing() {
-	console.log('otherthing');
-}
-
 var openEvent = new Event('open');
 var closeEvent = new Event('close');
 
@@ -25,7 +21,7 @@ function open(box, closetext) {
 	box.querySelector('button').setAttribute('aria-expanded', true);
 	box.querySelector('button span').textContent = closetext;
 	box.classList.add('js-expanded');
-	box.dispatchEvent(openEvent);
+	box.dispatchEvent(openEvent)
 }
 
 function openOrClose(box, height, closetext, opentext) {
@@ -58,23 +54,4 @@ function init(boxes, height = "95px", closetext = "Show less", opentext = "Show 
 	);
 }
 
-var boxArray = Array.from(document.querySelectorAll('.box'));
-init(boxArray, "55px", "close", "open");
-
-otherthing();
-
-var es5test = () => {
-	console.log("this arrow function will be transpiled in older browsers, and untranspiled in newer browsers!");
-};
-
-es5test();
-
-var box = document.querySelector('.box');
-
- box.addEventListener('open', function(e) {
-console.log('opened!!');
-});
-
-box.addEventListener('close', function() {
-	console.log('closed!!');
-});
+export default init;
