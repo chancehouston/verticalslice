@@ -15,8 +15,7 @@
     if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
 		var nomodulescript = document.createElement('script');
         nomodulescript.src = './javascript/bundle-es5.js';
-        nomodulescript.async = true;
-		nomodulescript.type = "nomodule"
+		nomodulescript.setAttribute("nomodule", true);
         document.body.appendChild(nomodulescript);
     }
 })();

@@ -3,8 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "up": "npm-run-all build start",
-    "build": "npm-run-all sass autoprefixer rollup transpilejs",
+	"up": "npm-run-all build start",
+	"live": "livereload ./public/javascript ./public/css", 
+	"build": "npm-run-all sass autoprefixer rollup transpilejs",
     "watch": "nodemon -e scss -x \"npm run build\"",
     "start": "node ./bin/www",
     "sass": "node-sass --output-style compressed -o public/css src/sass/style.scss --sourcemap",
@@ -30,18 +31,19 @@
     "postcss-cli": "^5.0.0"
   },
   "devDependencies": {
-    "rollup": "^0.59.1",
-    "rollup-plugin-node-resolve": "^3.3.0",
+    "@material/fab": "^0.36.1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "eyeglass": "^1.5.0",
     "google-closure-compiler-js": "^20180506.0.0",
+    "livereload": "^0.7.0",
     "lodash": "^4.17.10",
     "lodash-es": "^4.17.10",
-    "@material/fab": "^0.36.1",
     "moment": "^2.22.2",
     "node-sass": "^4.9.0",
+    "rollup": "^0.59.1",
     "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-watch": "^4.3.1"
   }
 }
