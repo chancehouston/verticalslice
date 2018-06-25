@@ -5,14 +5,23 @@ $global-grid--settings: (
   direction: ltr
 );
 
-@import '../../node_modules/@springernature/global-box/scss/10-settings/_global-box.scss';
-@import '../../node_modules/@springernature/global-box/scss/30-mixins/_global-box.scss';
-@import '../../node_modules/@springernature/global-box/scss/60-patterns/_global-box.scss';
-@import '../../node_modules/@springernature/global-grid/scss/30-mixins/_global-grid.scss';
-@import '../../node_modules/@springernature/global-mq/scss/30-mixins/_global-mq.scss';
+$global-spacing: (
+	0,
+	5, 
+	10, 
+	15, 
+	30
+);
 
-@import '../../node_modules/@springernature/global-colors/scss/10-settings/_global-colors.scss';
-@import '../../node_modules/@springernature/global-colors/scss/20-functions/_global-colors.scss';
+@import '@springernature/global-grid/scss/30-mixins/_global-grid.scss';
+@import '@springernature/global-mq/scss/30-mixins/_global-mq.scss';
+
+@import '@springernature/global-spacing/scss/20-functions/_global-spacing.scss';
+
+
+@import '@springernature/global-colors/scss/10-settings/_global-colors.scss';
+@import '@springernature/global-colors/scss/20-functions/_global-colors.scss';
+
 
 
 @font-face {
@@ -48,7 +57,7 @@ h1 {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-weight: 100;
-	margin-right: 10px;
+	margin: global-spacing(0,10,0,0);
 }
 
 h2 {

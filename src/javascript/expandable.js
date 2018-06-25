@@ -34,7 +34,7 @@ function openOrClose(box, height, closetext, opentext) {
 	}
 }
 
-function init(boxes, height = "95px", closetext = "Show less", opentext = "Show more") {
+function init(boxes, height = "200px", closetext = "Show less", opentext = "Show more") {
 	boxes.forEach((box) => {
 
 		let buttonEtc = '<div class="hide-print expandable-handle js-expandable-handle hide js-show" data-test="box-expandable-handle"><div class="expandable-fade"></div><div class="strong sans-serif expandable-inner smaller-expandable-inner background-cornsilk cleared"><button type="button" aria-expanded="false" class="full-width text-left link-like sans-serif text14 strong block pl20 pt10 pb6"><span class="icon icon-right icon-rotate icon-arrow-down-12x7-blue position-relative pr15">Show more</span></button></div></div>';
