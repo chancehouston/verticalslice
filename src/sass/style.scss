@@ -13,16 +13,18 @@ $global-spacing: (
 	30
 );
 
+$colors: (
+	'primary': #000,
+	'secondary': #fff,	
+	'gray': #d2d2d2
+	);
+
+	@debug $colors;
+
 @import '@springernature/global-grid/scss/30-mixins/_global-grid.scss';
 @import '@springernature/global-mq/scss/30-mixins/_global-mq.scss';
-
 @import '@springernature/global-spacing/scss/20-functions/_global-spacing.scss';
-
-
-@import '@springernature/global-colors/scss/10-settings/_global-colors.scss';
 @import '@springernature/global-colors/scss/20-functions/_global-colors.scss';
-
-
 
 @font-face {
 	font-family: 'lorem';
@@ -36,7 +38,6 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 1.3;
-	// background-color: rgb(245,245,245);
 	color: get-color('primary');
 	background-color: get-color('secondary');
 	color: rgb(40,40,40);
@@ -93,13 +94,12 @@ p {
 	}
 }
 
-
 .grid-container {
 	@include grid-container;
 }
 
 .grid-container-2col p, .grayp p  {
-	color: rgb(210,210,210);
+	color: get-color('gray');
 }
 
 .grid-container-2col > * {
@@ -133,7 +133,7 @@ footer {
 
 .fake-image {
     height: 150px;
-	background-color: rgb(210,210,210);
+	background-color: get-color('gray');
 	margin-right: 10px;
 	margin-bottom: 3px;
 	border-radius: 1px;
@@ -142,7 +142,7 @@ footer {
 .fake-image-small {
     height: 90px;
     width: 90px;
-	background-color: rgb(210,210,210);
+	background-color: get-color('gray');
 	border-radius: 1px;
 	float: right;
 }
@@ -157,10 +157,6 @@ footer {
 
 .margin-0 {
 	margin: 0;
-}
-
-body {
-	height: min-content;
 }
 
 [data-expandable-box] {
