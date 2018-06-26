@@ -7,38 +7,34 @@
     "build": "npm-run-all sass autoprefixer rollup transpilejs",
     "watch": "nodemon -e scss -x \"npm run build\"",
     "start": "node ./bin/www",
-    "sass": "node-sass --include-path='./node_modules' --include-path='./node_modules/foundation-sites/scss' --output-style compressed -o public/css src/sass/style.scss --sourcemap",
+    "sass": "node-sass --include-path='./node_modules' --output-style compressed -o public/css src/sass/style.scss --sourcemap",
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
     "rollup": "rollup --config --watch",
-    "transpilejs": "./node_modules/google-closure-compiler-js/cmd.js  public/javascript/bundle-es6.js > public/javascript/bundle-es5.js",
-    "test": "jshint index.js"
+    "transpilejs": "./node_modules/google-closure-compiler-js/cmd.js  public/javascript/bundle-es6.js > public/javascript/bundle-es5.js"
   },
   "dependencies": {
-    "@springernature/global-box": "^1.0.1",
     "@springernature/global-colors": "0.0.1",
     "@springernature/global-expandable-box": "^0.1.0",
-    "@springernature/global-grid": "0.0.1",
-    "@springernature/global-mq": "0.0.1",
+    "@springernature/global-grid": "0.1.1",
+    "@springernature/global-mq": "0.1.1",
     "@springernature/global-spacing": "^0.1.0",
-    "autoprefixer": "^8.6.2",
+    "autoprefixer": "^8.6.3",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
-    "foundation-sites": "^6.4.4-rc1",
     "google-closure-compiler": "^20180506.0.0",
     "hbs": "~4.0.1",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
     "npm-run-all": "^4.1.3",
-    "postcss-cli": "^5.0.0"
+    "postcss-cli": "^5.0.1"
   },
   "devDependencies": {
     "google-closure-compiler-js": "^20180506.0.0",
     "jshint": "^2.9.5",
     "lodash-es": "^4.17.10",
     "node-sass": "^4.9.0",
-    "rollup": "^0.59.1",
-    "rollup-plugin-node-resolve": "^3.3.0",
-    "rollup-watch": "^4.3.1"
+    "rollup": "^0.59.4",
+    "rollup-plugin-node-resolve": "^3.3.0"
   }
 }
