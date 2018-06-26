@@ -1,5 +1,5 @@
 import {treeshaketest, otherthing} from './thingy.js';
-import init from '../../node_modules/@springernature/global-expandable-box/js/index.js';
+import init from '@springernature/global-expandable-box/js/index.js';
 
 var es5test = () => {
 	console.log("this arrow function will be transpiled in older browsers, and untranspiled in newer browsers!");
