@@ -17,12 +17,3 @@ var es5test = () => {
 es5test();
 
 var box = document.querySelector('.box');
-
- box.addEventListener('open', function(e) {
-console.log('opened!!');
-})
-
-box.addEventListener('close', function() {
-	console.log('closed!!');
-})
-

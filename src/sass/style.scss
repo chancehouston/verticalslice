@@ -19,8 +19,6 @@ $colors: (
 	'gray': #d2d2d2
 	);
 
-	@debug $colors;
-
 @import '@springernature/global-grid/scss/30-mixins/_global-grid.scss';
 @import '@springernature/global-mq/scss/30-mixins/_global-mq.scss';
 @import '@springernature/global-spacing/scss/20-functions/_global-spacing.scss';
