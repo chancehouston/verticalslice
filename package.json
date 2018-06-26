@@ -32,7 +32,6 @@
   "devDependencies": {
     "google-closure-compiler-js": "^20180506.0.0",
     "jshint": "^2.9.5",
-    "lodash-es": "^4.17.10",
     "node-sass": "^4.9.0",
     "rollup": "^0.59.4",
     "rollup-plugin-node-resolve": "^3.3.0"
