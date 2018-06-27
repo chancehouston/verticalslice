@@ -15,14 +15,22 @@ $global-spacing: (
 
 $colors: (
 	'primary': #000,
-	'secondary': #fff,	
-	'gray': #d2d2d2
+	'secondary':#fff,
+	'grayish': #d2d2d2
 	);
 
-@import '@springernature/global-grid/scss/30-mixins/_global-grid.scss';
-@import '@springernature/global-mq/scss/30-mixins/_global-mq.scss';
+	$global-box--padding: 22px;
+	$global-box--border-color: aqua;
+	$global-box--background-color: purple;
+	$global-box--circle-diameter: 5em;
+	
+	
+@import '@springernature/global-box/scss/30-mixins/_global-box.scss';
+@import '@springernature/global-box/scss/50-components/_global-box.scss';
 @import '@springernature/global-spacing/scss/20-functions/_global-spacing.scss';
 @import '@springernature/global-colors/scss/20-functions/_global-colors.scss';
+@import '@springernature/global-grid/scss/30-mixins/_global-grid.scss';
+@import '@springernature/global-mq/scss/30-mixins/_global-mq.scss';
 
 @font-face {
 	font-family: 'lorem';
@@ -97,7 +105,7 @@ p {
 }
 
 .grid-container-2col p, .grayp p  {
-	color: get-color('gray');
+	color: get-color(grayish);
 }
 
 .grid-container-2col > * {
@@ -131,7 +139,7 @@ footer {
 
 .fake-image {
     height: 150px;
-	background-color: get-color('gray');
+	background-color: get-color(grayish);
 	margin-right: 10px;
 	margin-bottom: 3px;
 	border-radius: 1px;
@@ -140,7 +148,7 @@ footer {
 .fake-image-small {
     height: 90px;
     width: 90px;
-	background-color: get-color('gray');
+	background-color: get-color(grayish);
 	border-radius: 1px;
 	float: right;
 }

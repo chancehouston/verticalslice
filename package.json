@@ -13,6 +13,7 @@
     "transpilejs": "./node_modules/google-closure-compiler-js/cmd.js  public/javascript/bundle-es6.js > public/javascript/bundle-es5.js"
   },
   "dependencies": {
+    "@springernature/global-box": "^2.0.0",
     "@springernature/global-colors": "0.0.1",
     "@springernature/global-expandable-box": "^0.1.0",
     "@springernature/global-grid": "0.1.1",
