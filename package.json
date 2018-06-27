@@ -7,7 +7,7 @@
     "build": "npm-run-all sass autoprefixer rollup transpilejs",
     "watch": "nodemon -e scss -x \"npm run build\"",
     "start": "node ./bin/www",
-    "sass": "node-sass --include-path='./node_modules' --output-style compressed -o public/css src/sass/style.scss --sourcemap",
+    "sass": "node-sass --include-path='./node_modules' --output-style compressed -o public/css src/sass/style.scss",
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
     "rollup": "rollup --config --watch",
     "transpilejs": "./node_modules/google-closure-compiler-js/cmd.js  public/javascript/bundle-es6.js > public/javascript/bundle-es5.js"

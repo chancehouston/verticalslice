@@ -15,17 +15,27 @@ npm-run-all enables the terser
 ## Sass
 To avoid the need to specify the node_modules directory for every Sass include, uses --include-path
 ```
-    "sass": "node-sass --include-path='./node_modules' --output-style compressed -o public/css src/sass/style.scss --sourcemap",
+    "sass": "node-sass --include-path='./node_modules' --output-style compressed -o public/css src/sass/style.scss",
 ```
 
 ## Autoprefixer
 Autoprefixer is a postCSS plugin that adds vendor prefixes to CSS for wider browser support. 
+e.g. Instead of 
+```
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex
+```
+you can write `display: flex;`
 ```
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
 ```
 
 ## Rollup
-Rollup is a simpler alternative to Webpack that will treeshake by default. A rollup.config.js file is necessary for path resolution.
+Rollup is a simpler alternative to Webpack that will treeshake by default. A rollup.config.js file is necessary for path resolution. While all browsers (except IE) now support the module syntax, bundling is necessary both for backwards compatability and for performance. See [Using Javascript modules on the web](https://developers.google.com/web/fundamentals/primers/modules?utm_source=ponyfoo+weekly&utm_medium=email&utm_campaign=120)
+The --watch flag will rebuild the bundle whenever an individual module is changed & saved. 
 ```
     "rollup": "rollup --config --watch",
 ```
