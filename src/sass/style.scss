@@ -1,21 +1,21 @@
 
 $global-grid--settings: (
-  columns: 12,
-  gutter: 20px,
-  direction: ltr
+	columns: 12,
+	gutter: 20px,
+	direction: ltr
 );
 
 $global-spacing: (
 	0,
-	5, 
-	10, 
-	15, 
+	5,
+	10,
+	15,
 	30
 );
 
 $colors: (
 	'primary': #000,
-	'secondary':#fff,
+	'secondary': #fff,
 	'grayish': #d2d2d2
 	);
 
@@ -25,12 +25,12 @@ $colors: (
 	$global-box--circle-diameter: 5em;
 	
 	
-@import '@springernature/global-box/scss/30-mixins/_global-box.scss';
-@import '@springernature/global-box/scss/50-components/_global-box.scss';
-@import '@springernature/global-spacing/scss/20-functions/_global-spacing.scss';
-@import '@springernature/global-colors/scss/20-functions/_global-colors.scss';
-@import '@springernature/global-grid/scss/30-mixins/_global-grid.scss';
-@import '@springernature/global-mq/scss/30-mixins/_global-mq.scss';
+@import '@springernature/global-box/scss/30-mixins/global-box';
+@import '@springernature/global-box/scss/50-components/global-box';
+@import '@springernature/global-spacing/scss/20-functions/global-spacing';
+@import '@springernature/global-colors/scss/20-functions/global-colors';
+@import '@springernature/global-grid/scss/30-mixins/global-grid';
+@import '@springernature/global-mq/scss/30-mixins/global-mq';
 
 @font-face {
 	font-family: 'lorem';
@@ -46,8 +46,8 @@ body {
 	line-height: 1.3;
 	color: get-color('primary');
 	background-color: get-color('secondary');
-	color: rgb(40,40,40);
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+	color: rgb(40, 40, 40);
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .mt-50 {
@@ -64,14 +64,18 @@ h1 {
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	font-weight: 100;
-	margin: global-spacing(0,10,0,0);
+	margin: global-spacing(0, 10, 0, 0);
 }
 
 h2 {
 	font-weight: 500;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
 	line-height: 1.2;
 }
 
@@ -104,7 +108,8 @@ p {
 	@include grid-container;
 }
 
-.grid-container-2col p, .grayp p  {
+.grid-container-2col p, 
+.grayp p  {
 	color: get-color(grayish);
 }
 
