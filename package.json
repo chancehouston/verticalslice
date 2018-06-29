@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "up": "npm-run-all build start",
-    "build": "npm-run-all sass autoprefixer rollup transpilejs",
+    "build": "npm-run-all sass autoprefixer rollup minifyjs transpilejs",
     "watch": "nodemon --watch src/ -e scss,js -x \"npm run build\"",
     "start": "node ./bin/www",
     "sass": "node-sass --include-path='./node_modules' --output-style compressed -o public/css src/sass/style.scss",
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
     "rollup": "rollup --config",
-    "transpilejs": "./node_modules/google-closure-compiler-js/cmd.js  public/javascript/bundle-es6.js > public/javascript/bundle-es5.js",
+	"minifyjs": "google-closure-compiler-js --languageOut=ES6 public/javascript/bundle-es6.js > public/javascript/bundle-min-es6.js ",
+	"transpilejs": "google-closure-compiler-js --languageOut=ES5 public/javascript/bundle-es6.js > public/javascript/bundle-es5.js ",
     "lint:js": "eslint src/**/*.js",
     "lint:sass": "sass-lint --config .sass-lint.yml 'src/**/*.scss' --verbose --no-exit",
     "lint": "npm-run-all lint:sass lint:js"
