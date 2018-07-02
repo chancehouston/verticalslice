@@ -6,6 +6,7 @@
   </head>
   <body>
     {{{body}}}
+	   {{!-- <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script> --}}
 		<script type="module">
 		import './javascript/bundle-es6-min.js';
 	</script>
@@ -13,6 +14,11 @@
 		(function() {
     var linkEl = document.querySelector('link');
     if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
+
+		var polyfillscript = document.createElement('script');
+		polyfillscript.src = "https://cdn.polyfill.io/v2/polyfill.min.js";
+		document.body.appendChild(polyfillscript);
+
 		var nomodulescript = document.createElement('script');
         nomodulescript.src = './javascript/bundle-es5-min.js';
 		nomodulescript.setAttribute("nomodule", true);
