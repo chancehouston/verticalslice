@@ -7,14 +7,14 @@
   <body>
     {{{body}}}
 		<script type="module">
-		import './javascript/bundle-min-es6.js';
+		import './javascript/bundle-es6-min.js';
 	</script>
 	<script>
 		(function() {
     var linkEl = document.querySelector('link');
     if (window.matchMedia && window.matchMedia(linkEl.media).matches) {
 		var nomodulescript = document.createElement('script');
-        nomodulescript.src = './javascript/bundle-es5.js';
+        nomodulescript.src = './javascript/bundle-es5-min.js';
 		nomodulescript.setAttribute("nomodule", true);
         document.body.appendChild(nomodulescript);
     }
