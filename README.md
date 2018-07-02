@@ -39,9 +39,3 @@ The --watch flag will rebuild the bundle whenever an individual module is change
 ```
     "rollup": "rollup --config --watch",
 ```
-
-## Closure Compiler
-Closure compiler is an alternative to Babel — it transpiles ES6/7/8 etc to ES5. Additionally it optimizes/uglifies/minifies javascript for performance. 
-```
-    "transpilejs": "./node_modules/google-closure-compiler-js/cmd.js  public/javascript/bundle-es6.js > public/javascript/bundle-es5.js"
-```
