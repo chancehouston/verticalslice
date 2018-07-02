@@ -1,8 +1,77 @@
-var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.ASSUME_ES5=!1;$jscomp.ASSUME_NO_NATIVE_MAP=!1;$jscomp.ASSUME_NO_NATIVE_SET=!1;$jscomp.defineProperty=$jscomp.ASSUME_ES5||"function"==typeof Object.defineProperties?Object.defineProperty:function(a,c,b){a!=Array.prototype&&a!=Object.prototype&&(a[c]=b.value)};$jscomp.getGlobal=function(a){return"undefined"!=typeof window&&window===a?a:"undefined"!=typeof global&&null!=global?global:a};$jscomp.global=$jscomp.getGlobal(this);$jscomp.SYMBOL_PREFIX="jscomp_symbol_";
-$jscomp.initSymbol=function(){$jscomp.initSymbol=function(){};$jscomp.global.Symbol||($jscomp.global.Symbol=$jscomp.Symbol)};$jscomp.Symbol=function(){var a=0;return function(c){return $jscomp.SYMBOL_PREFIX+(c||"")+a++}}();
-$jscomp.initSymbolIterator=function(){$jscomp.initSymbol();var a=$jscomp.global.Symbol.iterator;a||(a=$jscomp.global.Symbol.iterator=$jscomp.global.Symbol("iterator"));"function"!=typeof Array.prototype[a]&&$jscomp.defineProperty(Array.prototype,a,{configurable:!0,writable:!0,value:function(){return $jscomp.arrayIterator(this)}});$jscomp.initSymbolIterator=function(){}};$jscomp.arrayIterator=function(a){var c=0;return $jscomp.iteratorPrototype(function(){return c<a.length?{done:!1,value:a[c++]}:{done:!0}})};
-$jscomp.iteratorPrototype=function(a){$jscomp.initSymbolIterator();a={next:a};a[$jscomp.global.Symbol.iterator]=function(){return this};return a};$jscomp.polyfill=function(a,c,b,d){if(c){b=$jscomp.global;a=a.split(".");for(d=0;d<a.length-1;d++){var e=a[d];e in b||(b[e]={});b=b[e]}a=a[a.length-1];d=b[a];c=c(d);c!=d&&null!=c&&$jscomp.defineProperty(b,a,{configurable:!0,writable:!0,value:c})}};
-$jscomp.polyfill("Array.from",function(a){return a?a:function(a,b,d){$jscomp.initSymbolIterator();b=null!=b?b:function(a){return a};var e=[],c=a[Symbol.iterator];if("function"==typeof c)for(a=c.call(a);!(c=a.next()).done;)e.push(b.call(d,c.value));else{c=a.length;for(var f=0;f<c;f++)e.push(b.call(d,a[f]))}return e}},"es6","es3");
-(function(){function a(a,c,b,g){a.querySelector("[data-expandable-box]").style.height=b;a.querySelector("[data-expandable-box]").setAttribute("aria-hidden",!0);a.querySelector("button").setAttribute("aria-expanded",!1);a.querySelector("button span").textContent=g;a.classList.remove("js-expanded");a.dispatchEvent(d);c&&a.scrollIntoView()}function c(a,c){a.querySelector("[data-expandable-box]").style.height=null;a.querySelector("[data-expandable-box]").setAttribute("aria-hidden",!1);a.querySelector("button").setAttribute("aria-expanded",
-!0);a.querySelector("button span").textContent=c;a.classList.add("js-expanded");a.dispatchEvent(b)}var b=new Event("open"),d=new Event("close");(function(b,d,f,g){d=void 0===d?"200px":d;f=void 0===f?"Show less":f;g=void 0===g?"Show more":g;b.forEach(function(b){b.insertAdjacentHTML("beforeEnd",'\x3cdiv\x3e\x3cdiv\x3e\x3cbutton type\x3d"button" aria-expanded\x3d"false"\x3e\x3cspan\x3eShow more\x3c/span\x3e\x3c/button\x3e\x3c/div\x3e\x3c/div\x3e');b.isOpen=!1;a(b,!1,d,g);b.querySelector("button").addEventListener("click",
-function(){var e=f;b.isOpen?(a(b,!0,d,g),b.isOpen=!1):(c(b,e),b.isOpen=!0)});Array.from(b.getElementsByTagName("a")).forEach(function(a){a.addEventListener("focus",function(){c(b,f)})})})})(Array.from(document.querySelectorAll(".box")),void 0,"close","open");console.log("otherthing");console.log("this arrow function will be transpiled in older browsers, and untranspiled in newer browsers!")})();
+'use strict';
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+(function () {
+	'use strict';
+
+	var openEvent = new Event('open');
+	var closeEvent = new Event('close');
+
+	function close(box, scrollIntoView, height, opentext) {
+		box.querySelector('[data-expandable-box]').style.height = height;
+		box.querySelector('[data-expandable-box]').setAttribute('aria-hidden', true);
+		box.querySelector('button').setAttribute('aria-expanded', false);
+		box.querySelector('button span').textContent = opentext;
+		box.classList.remove('js-expanded');
+		box.dispatchEvent(closeEvent);
+
+		if (scrollIntoView) {
+			box.scrollIntoView();
+		}
+	}
+
+	function open(box, closetext) {
+		box.querySelector('[data-expandable-box]').style.height = null;
+		box.querySelector('[data-expandable-box]').setAttribute('aria-hidden', false);
+		box.querySelector('button').setAttribute('aria-expanded', true);
+		box.querySelector('button span').textContent = closetext;
+		box.classList.add('js-expanded');
+		box.dispatchEvent(openEvent);
+	}
+
+	function openOrClose(box, height, closetext, opentext) {
+		if (box.isOpen) {
+			close(box, true, height, opentext);
+			box.isOpen = false;
+		} else {
+			open(box, closetext);
+			box.isOpen = true;
+		}
+	}
+
+	function init(boxes) {
+		var height = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '200px';
+		var closetext = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'Show less';
+		var opentext = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : 'Show more';
+
+		boxes.forEach(function (box) {
+			var buttonEtc = '<div><div><button type="button" aria-expanded="false"><span>Show more</span></button></div></div>';
+			box.insertAdjacentHTML('beforeEnd', buttonEtc);
+			box.isOpen = false;
+			close(box, false, height, opentext);
+			box.querySelector('button').addEventListener('click', function () {
+				openOrClose(box, height, closetext, opentext);
+			});
+
+			Array.from(box.getElementsByTagName('a')).forEach(function (a) {
+				a.addEventListener('focus', function () {
+					open(box, closetext);
+				});
+			});
+		});
+	}
+
+	function otherthing() {
+		console.log('otherthing');
+	}
+
+	var es5test = function es5test() {
+		console.log('this arrow function will be transpiled in older browsers, and untranspiled in newer browsers!');
+	};
+
+	var boxArray = [].concat(_toConsumableArray(document.querySelectorAll('.box')));
+	init(boxArray, undefined, 'close', 'open');
+	otherthing();
+	es5test();
+})();

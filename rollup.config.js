@@ -5,7 +5,7 @@ export default {
   input: 'src/javascript/index.js',
   output: {
     file: 'public/javascript/bundle-es6.js',
-    format: 'iife'
+	format: 'iife'
   },
   plugins: [
   	resolve()
