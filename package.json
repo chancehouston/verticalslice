@@ -11,22 +11,23 @@
     "autoprefixer": "postcss -u autoprefixer -r public/css/*",
     "rollup": "rollup --config",
     "transpilejs": "babel public/javascript/bundle-es6.js --out-file public/javascript/bundle-es5.js ",
-	"uglifyes6": "uglifyjs public/javascript/bundle-es6.js --compress --mangle --source-map url=bundle-es6-min.js.map --output public/javascript/bundle-es6-min.js",
+    "uglifyes6": "uglifyjs public/javascript/bundle-es6.js --compress --mangle --source-map url=bundle-es6-min.js.map --output public/javascript/bundle-es6-min.js",
     "uglifyes5": "uglifyjs public/javascript/bundle-es5.js --compress --mangle --source-map url=bundle-es5-min.js.map --output public/javascript/bundle-es5-min.js",
     "lint:js": "eslint src/**/*.js",
     "lint:sass": "sass-lint --config .sass-lint.yml 'src/**/*.scss' --verbose --no-exit",
     "lint": "npm-run-all lint:sass lint:js"
   },
   "dependencies": {
+    "@springernature/acme-button": "^0.1.2",
     "@springernature/global-box": "^2.0.0",
     "@springernature/global-colors": "0.0.1",
     "@springernature/global-expandable-box": "^0.1.0",
     "@springernature/global-grid": "0.1.1",
     "@springernature/global-mq": "0.1.1",
     "@springernature/global-spacing": "^0.1.0",
-    "autoprefixer": "^8.6.3",
-    "express": "~4.16.0",
-    "hbs": "~4.0.1",
+    "autoprefixer": "^8.6.4",
+    "express": "^4.16.0",
+    "hbs": "^4.0.1",
     "npm-run-all": "^4.1.3",
     "postcss-cli": "^5.0.1"
   },
@@ -45,7 +46,6 @@
     "rollup": "^0.59.4",
     "rollup-plugin-node-resolve": "^3.3.0",
     "sass-lint": "^1.12.1",
-    "uglify-es": "^3.3.9",
-    "xo": "^0.21.1"
+    "uglify-es": "^3.3.9"
   }
 }

@@ -24,6 +24,9 @@ $global-box--border-color: aqua;
 $global-box--background-color: purple;
 $global-box--circle-diameter: 5em;
 
+$acme-button--color: #fff;
+$acme-button--primary-color: #ad0000;
+$acme-button--font-fam: system-ui, helvetica, sans-serif;
 
 @import '@springernature/global-box/scss/30-mixins/global-box';
 @import '@springernature/global-box/scss/50-components/global-box';
@@ -31,6 +34,8 @@ $global-box--circle-diameter: 5em;
 @import '@springernature/global-colors/scss/20-functions/global-colors';
 @import '@springernature/global-grid/scss/30-mixins/global-grid';
 @import '@springernature/global-mq/scss/30-mixins/global-mq';
+// @import '@springernature/acme-button/scss/10-settings/acme-button';
+@import '@springernature/acme-button/scss/50-components/acme-button';
 
 @font-face {
     font-family: 'lorem';
@@ -52,6 +57,22 @@ body {
 
 .mt-50 {
     margin-top: 50px;
+}
+
+.ml-20 {
+	margin-left: 20px;
+}
+
+.mr-20 {
+	margin-right: 20px;
+}
+
+.float-right {
+	float: right;
+}
+
+.bfc-clearfix {
+	display: flow-root;
 }
 
 .height313 > * {
