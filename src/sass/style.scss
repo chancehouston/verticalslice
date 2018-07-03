@@ -193,3 +193,43 @@ footer {
 [data-expandable-box] {
     overflow: hidden;
 }
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+	text-align: center;
+	grid-gap: 5px;
+	color: white;
+}
+
+.span8 {
+	grid-column: 1 / -1;
+	background-color: rgb(204, 0, 74);
+}
+
+.span4 {
+	grid-column: span 4;
+}
+
+.pink {
+	background-color: rgb(244, 65, 217);
+}
+
+.light-pink {
+	background-color: rgb(242, 169, 231);
+}
+
+.blue {
+background-color: rgb(72, 40, 255);
+}
+
+.light-blue {
+background-color: rgb(168, 153, 255);
+}
+
+.grid > * {
+	font-family: system-ui, helvetica;
+	border: solid 2px rgb(50,50,50);
+	padding: 10px;
+	font-weight: 800;
+}
