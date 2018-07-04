@@ -233,3 +233,88 @@ background-color: rgb(168, 153, 255);
 	padding: 10px;
 	font-weight: 800;
 }
+
+.card * {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, helvetica, sans-serif;
+}
+
+.card {
+	padding: 20px;
+	color: rgb(70,70,70);
+	background-color: rgb(8,234,222);
+	border: solid 5px rgb(70,70,70);
+	border-radius: 5px;
+	max-width: 100%;
+	position: relative;
+}
+
+.card h2 {
+	display: inline-block;
+	margin-top: 0;
+}
+
+.card p {
+	margin-top: 2px;
+}
+
+li, ul, ol {
+	padding: 0;
+	margin: 0;
+}
+
+ol {
+	list-style: none;
+}
+
+ul {
+	list-style-type: disc;
+	list-style-position: inside;
+}
+
+.card-grid {
+	display: grid;
+	align-content: center;
+	grid-gap: 30px;
+	margin-left: 25px; margin-right: 25px;
+}
+
+@media (min-width: 600px) {
+	.card-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 900px) {
+	.card-grid {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+body {
+	counter-reset: section;
+  }
+
+.card::before {
+	counter-increment: section;
+	content: counter(section);
+	border: solid 2px currentColor;
+	position: absolute;
+	right: -27px;
+	top: -28px;
+	background-color: white;
+	border-radius: 50%;
+	height: 2em;
+	width: 2em;
+	text-align: center;
+	vertical-align: middle;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	font-weight: 800;
+	font-size: 24px;
+  }
+
+  p, li {
+	  font-weight: 600;
+  }
