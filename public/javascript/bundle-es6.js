@@ -64,7 +64,7 @@
 	};
 
 	const boxArray = [...(document.querySelectorAll('.box'))];
-	init(boxArray, undefined, 'close', 'open');
+	init(boxArray, '0px', 'close', 'open');
 	otherthing();
 	es5test();
 

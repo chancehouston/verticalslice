@@ -36,11 +36,6 @@ $acme-button--font-fam: system-ui, helvetica, sans-serif;
 @import '@springernature/global-mq/scss/30-mixins/global-mq';
 @import '@springernature/acme-button/scss/50-components/acme-button';
 
-@font-face {
-    font-family: 'lorem';
-    src: url("/BLOKKNeue-Regular.woff2") format("woff2");
-}
-
 $tablet: 600px;
 $desktop: 800px;
 
@@ -99,13 +94,13 @@ h5 {
     line-height: 1.2;
 }
 
-h2 {
+h2, h3 {
     font-size: 21px;
 }
 
 p {
     font-weight: 300;
-    font-family: 'lorem', sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif, sans-serif;
 }
 
 .grayscale {
@@ -198,8 +193,11 @@ footer {
 	display: grid;
 	grid-template-columns: repeat(8, 1fr);
 	text-align: center;
-	grid-gap: 5px;
 	color: white;
+}
+
+.grid p {
+	margin: 0;
 }
 
 .span8 {
@@ -229,7 +227,6 @@ background-color: rgb(168, 153, 255);
 
 .grid > * {
 	font-family: system-ui, helvetica;
-	border: solid 2px rgb(50,50,50);
 	padding: 10px;
 	font-weight: 800;
 }
@@ -248,7 +245,7 @@ background-color: rgb(168, 153, 255);
 	position: relative;
 }
 
-.card h2 {
+.card h3 {
 	display: inline-block;
 	margin-top: 0;
 	font-weight: 900;
@@ -274,6 +271,12 @@ ul {
 	list-style-position: inside;
 }
 
+.flow-visual h2 {
+	max-width: 700px;
+	text-align: left;
+	margin: auto;
+}
+
 .card-grid {
 	display: grid;
 	align-content: center;
@@ -293,7 +296,7 @@ ul {
 	}
 }
 
-body {
+.flow-visual {
 	counter-reset: section;
   }
 
@@ -320,4 +323,8 @@ body {
 
   p, li {
 	  font-weight: 600;
+  }
+
+  .align-center {
+	  text-align: center;
   }

@@ -71,7 +71,7 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 	};
 
 	var boxArray = [].concat(_toConsumableArray(document.querySelectorAll('.box')));
-	init(boxArray, undefined, 'close', 'open');
+	init(boxArray, '0px', 'close', 'open');
 	otherthing();
 	es5test();
 })();
